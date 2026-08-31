@@ -298,7 +298,3 @@ personal data is present or produced.
 
 ---
 
-## 10. Contact / handover
-
-Original author left on 2026-08-31. Questions about *the dataset itself* go to
-the dataset authors (University of Hamburg) listed on the Zenodo record.
