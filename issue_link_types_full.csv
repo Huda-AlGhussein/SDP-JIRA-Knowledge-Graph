@@ -1,0 +1,108 @@
+name,inward_label,outward_label,total_count,inward_direction_count,outward_direction_count,num_repositories,repositories
+Duplicate,is duplicated by,duplicates,542670,271301,271369,14,Apache;Hyperledger;IntelDAOS;JFrog;Jira;JiraEcosystem;MariaDB;Mindville;Mojang;MongoDB;Qt;RedHat;Sonatype;Spring
+Reference,is related to,relates to,271324,135737,135587,2,Apache;Jira
+Relates,relates to,relates to,80480,40241,40239,6,Hyperledger;IntelDAOS;MariaDB;Mindville;Mojang;Qt
+Related,is related to,relates to,72249,36090,36159,3,Apache;Jira;RedHat
+Related,is related to,related to,51991,25995,25996,1,MongoDB
+Blocks,is blocked by,blocks,46622,23483,23139,8,Hyperledger;IntelDAOS;JiraEcosystem;MariaDB;Mindville;Mojang;Qt;RedHat
+Cloners,is cloned by,clones,37867,18939,18928,8,Hyperledger;IntelDAOS;JFrog;Mindville;Mojang;MongoDB;Qt;RedHat
+Blocker,is blocked by,blocks,33830,16949,16881,3,Apache;Jira;JiraEcosystem
+Depends,is depended on by,depends on,29643,14822,14821,4,JiraEcosystem;MongoDB;SecondLife;Spring
+dependent,is depended upon by,depends upon,26368,13167,13201,1,Apache
+Superset,is incorporated by,incorporates,22408,11185,11223,1,RedHat
+1 - Relate,is related to,relates to,19820,9910,9910,1,Sakai
+Relate,is related to,relates to,17534,8760,8774,3,Jira;JiraEcosystem;Spring
+Incorporates,is part of,incorporates,14679,7339,7340,1,Apache
+Dependency,is required for,depends on,12754,6377,6377,1,Qt
+Sequence,is followed up by,follows up on,10594,5291,5303,1,RedHat
+Problem/Incident,is caused by,causes,10272,5135,5137,3,Apache;MariaDB;MongoDB
+Cloners,is cloned by,is a clone of,8979,4489,4490,1,Apache
+Regression,is broken by,breaks,8832,4416,4416,1,Apache
+Container,Is contained by,contains,7534,3767,3767,1,Apache
+Required,is required by,requires,7458,3721,3737,1,Apache
+Supercedes,is superceded by,supercedes,7130,3565,3565,2,Apache;Sonatype
+Causality,is caused by,causes,6545,3278,3267,1,RedHat
+Cloners,was cloned as,is cloned from,6134,3061,3073,1,Jira
+Part,is incorporated by,incorporates,5560,2781,2779,2,Jira;JiraEcosystem
+Detail,is detailed by,details,5460,1896,3564,1,Jira
+Work Breakdown,resulted from,resulted in,5404,2702,2702,1,Qt
+5 - Depend,depends on,is depended on by,5280,2640,2640,1,Sakai
+Replacement,replaces,is replaced by,5242,2621,2621,1,Qt
+Child-Issue,is a child of,is a parent of,5210,2605,2605,1,Apache
+3 - Duplicate,is duplicated by,duplicates,3806,1903,1903,1,Sakai
+Cause,causes,is caused by,3739,1868,1871,1,Jira
+Documented,is documented by,documents,3674,1837,1837,1,MongoDB
+Relates,is related to,relates,3606,1803,1803,1,Sonatype
+Cloners (old),cloned from,cloned to,3527,1718,1809,1,RedHat
+4 - Incorporate,is incorporated by,incorporates,2796,1398,1398,1,Sakai
+Blocked,Blocked,Blocked,2558,1279,1279,1,Apache
+Depend,is depended on by,depends on,2551,1276,1275,1,Spring
+PartOf,is part of,includes,2364,1182,1182,1,MariaDB
+Issue split,split from,split to,2238,1117,1121,9,Apache;Hyperledger;Jira;JiraEcosystem;MariaDB;MongoDB;Qt;RedHat;Sonatype
+Related,is related to,is related to ,2080,1040,1040,1,IntelDAOS
+Related,is related to,is related to,2050,1023,1027,1,Spring
+Completes,is fixed by,fixes,2004,1002,1002,1,Apache
+2 - Cloned,cloned from,cloned as,1980,990,990,1,Sakai
+Relationship,is related to,relates to,1822,911,911,1,JFrog
+Documentation,is documented by,documents,1359,679,680,1,RedHat
+Gantt Dependency,has to be done after,has to be done before,1354,677,677,1,MongoDB
+Blocker,is blocked by,is blocking,1348,674,674,1,IntelDAOS
+Bonfire Testing,discovered while testing,testing discovered,1292,646,646,2,Mojang;Sonatype
+Derived,has a derivative of,derived from,1114,555,559,1,Jira
+Supersession,supersedes,is superseded by,1023,510,513,1,Jira
+Supersede,is superseded by,supersedes,981,490,491,1,Spring
+Cause,is caused by,causes,900,450,450,1,JiraEcosystem
+Dependent,Dependent,Dependent,812,406,406,1,Apache
+Regression,has a regression in,is a regression of,798,399,399,1,Jira
+Split,was split into,was split from,607,303,304,2,Jira;JiraEcosystem
+Bonfire Testing,Testing discovered,Discovered while testing,572,285,287,2,Jira;JiraEcosystem
+multi-level hierarchy [GANTT],is subtask of,is parent task of,570,285,285,1,RedHat
+Dependency,is a precondition for,depends on,520,260,260,1,JFrog
+Caused,is caused by,causes,482,241,241,1,Sonatype
+Trigger,was triggered by,triggered,410,205,205,1,JFrog
+Relates,related,related,410,205,205,1,SecondLife
+Cloners,cloned by,clones,408,204,204,1,JiraEcosystem
+Backports,backports,backported by,375,187,188,1,MongoDB
+Cloners (migrated),is cloned by,Clones,372,186,186,1,IntelDAOS
+finish-start [GANTT],has to be done after,has to be done before,372,186,186,1,RedHat
+Account,account is impacted by,impacts account,368,184,184,1,RedHat
+dependent,is depended on by,depends on,338,169,169,1,Sonatype
+Depends,depended on by,depends on,335,168,167,1,Jira
+Reference,is referenced by,references,300,150,150,1,JiraEcosystem
+Parent Feature,Parent Feature,Parent Feature,288,144,144,1,Apache
+Dependency,Dependency,Dependency,236,118,118,1,Apache
+Gantt End to Start,has to be done after,has to be done before,220,110,110,2,IntelDAOS;JFrog
+Fixes,fixed by,fixes,218,109,109,1,Sonatype
+Follows,Followed up by,Follow up to,200,100,100,1,JiraEcosystem
+Testing,Discovered while testing,Testing discovered,160,80,80,1,Apache
+Resolve,is resolved by,resolves,156,78,78,1,Jira
+Gantt End to End,has to be finished together with,has to be finished together with,138,69,69,3,IntelDAOS;JFrog;MongoDB
+Tested,is testing,tested by,124,62,62,1,MongoDB
+Bonfire testing,Testing discovered,Discovered while testing,112,56,56,1,JiraEcosystem
+Cloners,duplicates,duplicates,104,52,52,1,SecondLife
+Test,Is tested by,tests,102,51,51,1,Qt
+Follows,followed by,follows,100,50,50,1,Jira
+Contains(WBSGantt),is contained in,contains,98,49,49,1,JFrog
+Gantt: finish-start,has to be done after,has to be done before,92,46,46,1,RedHat
+Parent/Child,is a child of,is a parent of,86,43,43,1,SecondLife
+finish-finish [GANTT],has to be finished together with,has to be finished together with,84,42,42,1,RedHat
+Gantt: start-finish,is triggered by,is triggering,80,40,40,1,RedHat
+Verify,is verified by,verifies,78,39,39,1,IntelDAOS
+Epic,is the epic for,belongs to epic,50,25,25,1,JiraEcosystem
+Gantt: finish-finish,has to be finished together with,has to be finished together with,40,20,20,1,RedHat
+Implement,is implemented by,implements,38,19,19,1,IntelDAOS
+Collection,is included In,includes,30,15,15,1,SecondLife
+Cloners,Cloned to,Cloned from,28,14,14,1,Spring
+Implements,is implemented by,implements,26,13,13,1,Sonatype
+Git Code Review,opened during git code review in,git code review opened,16,8,8,1,Hyperledger
+Preceded By,Preceded By,Precedes,14,7,7,1,JiraEcosystem
+6 - Blocks,is blocked by,blocks,12,6,6,1,Sakai
+start-finish [GANTT],start is earliest end of,earliest end is start of,8,4,4,1,RedHat
+Gantt Start to Start,has to be started together with,has to be started together with,6,3,3,3,IntelDAOS;JFrog;MongoDB
+Initiative,included in Initiative,includes Epic(s),4,2,2,1,MongoDB
+Covered,is covered by,covers,4,2,2,1,Qt
+Finish-to-Finish link (WBSGantt),can't finish until the linked issue is done.,Linked one can't finish until this issue is done.,2,1,1,1,JFrog
+Polaris datapoint issue link,added to idea,is idea for,2,1,1,1,JiraEcosystem
+Polaris issue link,is implemented by,implements,2,1,1,1,JiraEcosystem
+Gantt: start-start,has to be started together with,has to be started together with,2,1,1,1,RedHat
+7 - Git Code Review,opened during git code review in,git code review opened,2,1,1,1,Sakai

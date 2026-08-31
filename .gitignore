@@ -1,0 +1,61 @@
+# ---------------------------------------------------------------------------
+# Datasets (public, but NOT redistributed here - see README for download links)
+# ---------------------------------------------------------------------------
+*.zip
+*ThePublicJiraDataset.zip
+2025-06-23 ThePublicJiraDataset/
+ThePublicJiraDataset/
+**/mongodump-*.archive
+*.archive
+
+# ---------------------------------------------------------------------------
+# Generated / derived data files (reproducible by running the scripts)
+# ---------------------------------------------------------------------------
+developer_profiles.jsonl
+developer_profiles_flagged.jsonl
+normalized_issue_links.jsonl
+zero_tenure_profiles.jsonl
+*.jsonl
+
+# Generated graph objects / large binaries
+apache_graph_prototype.pkl
+*.pkl
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Secrets / credentials / local config - never commit
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+*.pem
+*.key
+*.pfx
+*_secret*
+*token*
+config.local.*
+.mongo_uri
+
+# ---------------------------------------------------------------------------
+# Editor / OS noise
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*~
