@@ -52,9 +52,12 @@ local `.jsonl` files and writes new local files.
 | Profile distributions | `compute_profile_distributions.py` | `output/profile_distribution_output.txt`, `zero_tenure_profiles.jsonl` *(generated, git-ignored)* | Percentiles used to pick bot-flag thresholds (p99.9). |
 | Profile summary | `summarize_developer_profiles.py` | *(stdout)* | Sanity-check distribution of the profiles. |
 | Bot flagging | `flag_bot_profiles.py` | `developer_profiles_flagged.jsonl` *(generated, ~247 MB, git-ignored)* | Adds `is_likely_bot` / `flags_tripped` (flag-first, nothing dropped). |
-| Profile distribution helper | `compute_profile_distributions.py` | `output/profile_distribution_output.txt` | (see above) |
-| Extra distribution stats | `check_top_developers.py` | `output/` (run manually) | Inspect top-20 most active accounts for bot signals. |
+| Top-developer bot check | `check_top_developers.py` | *(stdout, run manually)* | Inspect top-20 most active accounts for bot signals. |
 | Prototype graph | `build_apache_graph_prototype.py` | `apache_graph_prototype.pkl` *(generated, ~311 MB, git-ignored)*, `apache_graph_sample.png` | Apache-only NetworkX `MultiDiGraph`: Developer + Issue nodes; `reportedBy` / `assignedTo` / `linksTo` edges. Also renders a sample neighborhood PNG. |
+
+The repo contains **15 Python files**: 14 runnable scripts (above) plus
+`link_type_mapping.py`, which is a data module imported by
+`normalize_issue_links.py`, not run on its own.
 
 Methodological decisions are documented in the module docstring at the top of
 each script — **read those first**, they record why each choice was made.
@@ -174,7 +177,14 @@ pip install pymongo networkx matplotlib numpy
 
 ### Run the pipeline (in order)
 
+Run from the repo root, with the MongoDB `JiraReposAnon` database already
+restored (see above). Each step depends on the steps before it.
+`[GIT-IGNORED]` marks the command that produces each large file **not** stored
+in git — running these steps in order regenerates every excluded `.jsonl` /
+`.pkl` file from scratch.
+
 ```bash
+# --- Data understanding (independent; each only reads MongoDB) ---
 python inspect_jira.py                       > output/schema_output.txt
 python full_collection_stats.py              > output/full_stats_output.txt
 python check_developer_identity.py           > output/identity_check_output.txt
@@ -182,15 +192,24 @@ python check_cross_repo_identity.py          > output/cross_repo_identity_output
 python check_missing_identity_fields.py      > output/missing_identity_output.txt
 python check_comments_and_linktypes.py       > output/comments_and_linktypes_output.txt
 
+# --- Issue-link normalization ---
 python scan_issue_link_types.py              # -> issue_link_types_full.csv
-python normalize_issue_links.py              # -> normalized_issue_links.jsonl
+#   link_type_mapping.py is imported by the next step, not run directly
+python normalize_issue_links.py              # [GIT-IGNORED] -> normalized_issue_links.jsonl  (~350 MB)
 
-python build_developer_profiles.py           # -> developer_profiles.jsonl
+# --- Developer profiles + bot flagging ---
+python build_developer_profiles.py           # [GIT-IGNORED] -> developer_profiles.jsonl  (~207 MB)
 python compute_profile_distributions.py      > output/profile_distribution_output.txt
-python summarize_developer_profiles.py
-python flag_bot_profiles.py                  # -> developer_profiles_flagged.jsonl
+#     also writes  [GIT-IGNORED] -> zero_tenure_profiles.jsonl  (~144 MB)
+python summarize_developer_profiles.py       # prints a sanity-check summary; writes nothing
+python check_top_developers.py               # optional: prints top-20 accounts for bot inspection
+python flag_bot_profiles.py                  # [GIT-IGNORED] -> developer_profiles_flagged.jsonl  (~247 MB)
+#   requires: developer_profiles.jsonl
 
-python build_apache_graph_prototype.py       # -> apache_graph_prototype.pkl + apache_graph_sample.png
+# --- Prototype graph (Apache only) ---
+#   requires: normalized_issue_links.jsonl + developer_profiles_flagged.jsonl + MongoDB
+python build_apache_graph_prototype.py       # [GIT-IGNORED] -> apache_graph_prototype.pkl  (~311 MB)
+                                             #  also writes  -> apache_graph_sample.png  (committed)
 ```
 
 > **Note on hard-coded paths:** several scripts contain absolute Windows paths
