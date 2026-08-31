@@ -1,6 +1,5 @@
 # Developer / Issue Knowledge Graph from Public Jira Repositories
 
-Handover documentation. Last working day of the original author: **2026-08-31**.
 
 ---
 
