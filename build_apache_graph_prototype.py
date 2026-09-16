@@ -40,6 +40,9 @@ Methodological choices (stated explicitly, not buried in the code):
 Requires: pymongo, networkx
     pip install pymongo networkx
 """
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
 
 import json
 import pickle
@@ -50,9 +53,9 @@ MONGO_URI = "mongodb://127.0.0.1:27017"
 DB_NAME = "JiraReposAnon"
 REPO = "Apache"
 
-LINKS_PATH = r"C:\Users\OpenU\GNN\normalized_issue_links.jsonl"
-DEV_PROFILES_PATH = r"C:\Users\OpenU\GNN\developer_profiles_flagged.jsonl"
-OUTPUT_PATH = r"C:\Users\OpenU\GNN\apache_graph_prototype.pkl"
+LINKS_PATH = BASE_DIR / "normalized_issue_links.jsonl"
+DEV_PROFILES_PATH = BASE_DIR / "developer_profiles_flagged.jsonl"
+OUTPUT_PATH = BASE_DIR / "apache_graph_prototype.pkl"
 
 
 def load_jsonl(path):
@@ -173,8 +176,8 @@ if __name__ == "__main__":
 import networkx as nx
 import matplotlib.pyplot as plt
  
-GRAPH_PATH = r"C:\Users\OpenU\GNN\apache_graph_prototype.pkl"
-OUTPUT_IMAGE = r"C:\Users\OpenU\GNN\apache_graph_sample.png"
+GRAPH_PATH = BASE_DIR / "apache_graph_prototype.pkl"
+OUTPUT_IMAGE = BASE_DIR / "apache_graph_sample.png"
 MIN_LINKS = 3
  
 with open(GRAPH_PATH, "rb") as f:
