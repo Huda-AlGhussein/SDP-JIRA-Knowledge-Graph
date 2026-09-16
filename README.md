@@ -68,8 +68,8 @@ Public Jira Dataset → MongoDB → link normalization → developer profiles �
 - **Python 3.10** (the profile scripts use a manual timestamp parser specifically for 3.10).
   Install dependencies: `pip install pymongo networkx matplotlib numpy`
 - **Hard-coded paths:** `build_apache_graph_prototype.py` has absolute
-  `C:\Users\OpenU\GNN\...` paths in the constants at the top of the file. Update these
-  paths for your machine before running.
+  `The script uses paths relative to the repository directory.
+  Update the filename constants if the input files are stored elsewhere.
 
 ### Optional data-understanding checks
 
